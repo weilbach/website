@@ -1,0 +1,53 @@
+body {
+    background-color: rgb(55, 48, 50) !important;
+    height: 100vh;
+}
+
+#react_entry {
+    height: 100%;
+    background-color: rgb(55, 48, 50);
+    /* display: flex; */
+}
+
+.contact_button_text {
+    color: white !important;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+}
+
+.contact_button {
+    color:white !important;
+}
+
+.toolbar {
+    background-color: blue !important;
+    justify-content: center;
+}
+
+.my_name {
+    background-color: rgb(55, 48, 50);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.word_of_the_day {
+    position: absolute;
+}
+
+.main {
+    background-color: rgb(55, 48, 50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.height_100 {
+    height: 100%;
+}
