@@ -5,15 +5,18 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Snackbar from '@material-ui/core/Snackbar';
 import { IconButton } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
 
 
 class Button_bar extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {open: false, open_apps: false, snack_status: false};
+        this.state = {open: false, open_apps: false, snack_status: false, menu: null};
         this.handle_click_contact = this.handle_click_contact.bind(this)
         this.handle_click_apps = this.handle_click_apps.bind(this)
         this.handle_snack_close = this.handle_snack_close.bind(this)
+        this.handle_menu_close = this.handle_menu_close.bind(this) 
     }
 
     handle_click_contact() {
@@ -24,9 +27,9 @@ class Button_bar extends React.Component {
         })
     }
 
-    handle_click_apps () {
+    handle_click_apps (e) {
         this.setState({
-            snack_status: true
+            menu: e.target
         })
     }
 
@@ -36,9 +39,20 @@ class Button_bar extends React.Component {
         })
     }
 
+    handle_menu_close() {
+        this.setState({
+          menu: null
+        })
+      }
+
+      handle_snake_game = () => {
+        this.props.handle_snake_game()
+      }
+
 
     render() {
         let contact;
+        let anchorEl = this.state.menu;
         let snackbar = (
             <Snackbar
                 anchorOrigin = {{
@@ -56,8 +70,8 @@ class Button_bar extends React.Component {
                         color = "white"
                         onClick =  {this.handle_snack_close}
                         >
-                            <CloseIcon/>
-                        </IconButton>
+                        <CloseIcon/>
+                    </IconButton>
                 ]}
             />
         )
@@ -81,6 +95,14 @@ class Button_bar extends React.Component {
                     <Button className="contact_button" color="gray" onClick={this.handle_click_apps}>Apps</Button>
                     <Button className="contact_button" color="gray" onClick={this.handle_click_contact}>Contact Me</Button>
                     <Button className="contact_button" color="gray" href="/Weilbach_Justin_Resume.pdf" download>Resume</Button>
+                    <Menu
+                        id="simple-menu"
+                        anchorEl={anchorEl}
+                        open={Boolean(anchorEl)}
+                        onClose={this.handle_menu_close}
+                        >
+                        <MenuItem onClick={this.handle_snake_game}>Snake</MenuItem>
+                    </Menu>
                 </Toolbar>
                 {contact}
                 {snackbar}

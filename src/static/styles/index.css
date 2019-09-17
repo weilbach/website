@@ -33,6 +33,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: Roboto;
+    font-size: 32px
 }
 
 .word_of_the_day {
@@ -51,3 +53,80 @@ body {
 .height_100 {
     height: 100%;
 }
+
+/* start snake css */
+.snake-game:focus {
+    outline: 0;
+}
+
+.grid {
+    /* we don't want borders to factor into the size, so that grid calculations can be exact, so use content-box sizing */
+    box-sizing: content-box;
+    padding: 0;
+    border-top: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    width: 300px;
+    height: 300px;
+}
+
+.start-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: hsla(0, 0%, 0%, .9);
+    border-radius: 0;
+    font-size: 1.2rem;
+
+    width: 301px;
+    height: 301px;
+  }
+
+  .button-overlay {
+    background-color: rgb(55, 117, 233);
+    color: white;
+  }
+
+  .button-overlay:hover {
+      outline: 0;
+  }
+
+  .button-overlay:focus {
+      outline: 0;
+  }
+
+  .score {
+      color: white;
+  }
+
+  .cell {
+    border-left: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+
+}
+
+.cell-snake {
+    border-left: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    background-color: yellow;
+}
+
+.cell-food {
+    border-left: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    background-color: blue;
+    
+}
+
+.col {
+    color:white !important;
+    text-align: center !important; 
+    font-family: Roboto;
+    font-size: 32px;  
+}
+
+/* end snake css */
