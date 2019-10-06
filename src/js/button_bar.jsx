@@ -95,6 +95,7 @@ class Button_bar extends React.Component {
                     <Button className="contact_button" color="gray" onClick={this.handle_click_apps}>Apps</Button>
                     <Button className="contact_button" color="gray" onClick={this.handle_click_contact}>Contact Me</Button>
                     <Button className="contact_button" color="gray" href="/Weilbach_Justin_Resume.pdf" download>Resume</Button>
+                    <Button className="contact_button" color="gray" href="/aboutme">About Me</Button>
                     <Menu
                         id="simple-menu"
                         anchorEl={anchorEl}
